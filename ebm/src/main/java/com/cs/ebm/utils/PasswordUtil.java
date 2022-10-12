@@ -20,5 +20,4 @@ public class PasswordUtil {
 			throw new RuntimeException(e);
 		}
 	}
-
 }

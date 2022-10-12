@@ -8,8 +8,6 @@ public class EbmApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(EbmApplication.class, args);
-		
-		System.out.println("Event Managment Booking");
 	}
 
 }

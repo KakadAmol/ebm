@@ -1,4 +1,9 @@
 spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+    static-path-pattern: /resources/**
   datasource:
     url: jdbc:mysql://localhost:3306/ebm?useSSL=false
     username: ebm
