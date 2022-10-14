@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.cs.ebm.pojo.Login;
 
 @Repository
-public interface LoginDAO extends JpaRepository<Integer, Login> {
+public interface LoginDAO extends JpaRepository<Login, Long> {
 
 }

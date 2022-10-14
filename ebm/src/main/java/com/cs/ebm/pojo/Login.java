@@ -5,15 +5,14 @@ import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-
-import org.springframework.data.annotation.Id;
+import javax.persistence.Id;
 
 @Entity
 public class Login {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer userid;
+	private Long userid;
 	private String email;
 	private String password;
 	private String usertype;
@@ -23,7 +22,7 @@ public class Login {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Login(Integer userid, String email, String password, String usertype, String status) {
+	public Login(Long userid, String email, String password, String usertype, String status) {
 		super();
 		this.userid = userid;
 		this.email = email;
@@ -32,11 +31,11 @@ public class Login {
 		this.status = status;
 	}
 
-	public Integer getuserid() {
+	public Long getuserid() {
 		return userid;
 	}
 
-	public void setuserid(Integer userid) {
+	public void setuserid(Long userid) {
 		this.userid = userid;
 	}
 

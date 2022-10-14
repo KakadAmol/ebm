@@ -46,9 +46,9 @@ public class LoginController {
 
 		if (loginuser.equals(dbEmail) && password.equals(dbPass)) {
 			if (loginuser.equals("null")) {
-				System.out.println("null check");
+				logger.info("null check");
 			} else {
-				System.out.println("success login");
+				logger.info("success login");
 				return new ModelAndView("dashboardAdmin", "Message", "Login successful");
 			}
 			return new ModelAndView("login", "Message", "Login successful");
@@ -56,16 +56,16 @@ public class LoginController {
 
 		if (loginuser.equals("amruta") && password.equals("amruta")) {
 			String dbUserFirstName = null;
-			System.out.println(dbUsrId);
+			logger.info(dbUsrId);
 			request.getSession().setAttribute("userId", dbUsrId);
 			request.getSession().setAttribute("userName", loginuser);
 
-			System.out.println(dbUsrId + "fname " + loginuser + " " + dbEmail);
+			logger.info(dbUsrId + "fname " + loginuser + " " + dbEmail);
 			if (loginuser.equals("null")) {
-				System.out.println("null check");
+				logger.info("null check");
 				return new ModelAndView("login", "Message", "Login Falied.!");
 			} else {
-				System.out.println("success login");
+				logger.info("success login");
 				return new ModelAndView("dashboardAdmin", "Message", "Login successful");
 			}
 		}
