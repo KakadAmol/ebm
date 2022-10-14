@@ -19,15 +19,11 @@ public class LoginController {
 
 	private static final Logger logger = LogManager.getLogger(LoginController.class);
 
-	@Autowired
-	private LoginService loginService;
-	
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView checkLogin(HttpServletRequest request, HttpServletResponse response) {
 		logger.info("login controller called.");
 		String loginuser = request.getParameter("email");
 		String password = request.getParameter("password");
-		
 		HttpSession session = request.getSession();
 		logger.info("old session : " + session.getId());
 		logger.info("session last access time : " + session.getLastAccessedTime());
@@ -38,7 +34,7 @@ public class LoginController {
 			session.setMaxInactiveInterval(0);
 			logger.info("new session:" + session.getId());
 		}
-		
+
 		int dbUsrId = 0;
 		String dbEmail = null;
 		String dbMobile = null;
