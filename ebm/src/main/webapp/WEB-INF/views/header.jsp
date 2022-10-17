@@ -39,9 +39,10 @@
 %>
 <%@include file="connection.jsp"%>
 <%
-	Integer useridheder = (Integer) session.getAttribute("userId");
-	String useremailheader = (String) session.getAttribute("userEmail");
-	String username=(String) session.getAttribute("userName");
+	Long useridheder = (Long)session.getAttribute("userId");
+	String useremailheader =(String) session.getAttribute("userEmail");
+	String username=(String)session.getAttribute("userName");
+	String usertype=(String)session.getAttribute("userType");
 %>
 
 	<div class="wrapper">
@@ -93,7 +94,7 @@
 							class="img-circle elevation-2" alt="User Image">
 					</div>
 					<div class="info">
-						<a href="#" class="d-block">Darshit R</a>
+						<a href="#" class="d-block"><%=username%></a>
 					</div>
 				</div>
 

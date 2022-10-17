@@ -19,13 +19,13 @@
 <body class="hold-transition login-page">
 	<div class="login-box">
 		<div class="login-logo">
-			<a href="../../index2.html"><b>EBM</b>Login</a>
+			<a href="#"><b>EBM</b>Login</a>
 		</div>
 		<!-- /.login-logo -->
 		<div class="card">
 			<div class="card-body login-card-body">
 				<p class="login-box-msg">Sign in to start your session</p>
-
+				<p class="login-box-msg" style="color: red;">${Message}</p>
 				<form action="login" method="post">
 					<div class="input-group mb-3">
 						<input type="email" class="form-control" name="email" placeholder="Email">
@@ -67,7 +67,7 @@
 					<a href="forgot-password.html">I forgot my password</a>
 				</p>
 				<p class="mb-0">
-					<a href="register.html" class="text-center">Register a new
+					<a href="register.jsp" class="text-center">Register a new
 						membership</a>
 				</p>
 			</div>

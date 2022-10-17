@@ -1,7 +1,5 @@
 package com.cs.ebm.pojo;
 
-import java.util.Objects;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +11,7 @@ public class Login {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long userid;
+	private String username;
 	private String email;
 	private String password;
 	private String usertype;
@@ -22,9 +21,10 @@ public class Login {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Login(Long userid, String email, String password, String usertype, String status) {
+	public Login(Long userid, String username, String email, String password, String usertype, String status) {
 		super();
 		this.userid = userid;
+		this.username = username;
 		this.email = email;
 		this.password = password;
 		this.usertype = usertype;
@@ -37,6 +37,14 @@ public class Login {
 
 	public void setuserid(Long userid) {
 		this.userid = userid;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getEmail() {
@@ -69,31 +77,6 @@ public class Login {
 
 	public void setStatus(String status) {
 		this.status = status;
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(email, password, status, userid, usertype);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Login other = (Login) obj;
-		return Objects.equals(email, other.email) && Objects.equals(password, other.password)
-				&& Objects.equals(status, other.status) && Objects.equals(userid, other.userid)
-				&& Objects.equals(usertype, other.usertype);
-	}
-
-	@Override
-	public String toString() {
-		return "Login [userid=" + userid + ", email=" + email + ", password=" + password + ", usertype=" + usertype
-				+ ", status=" + status + "]";
 	}
 
 }

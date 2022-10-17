@@ -23,7 +23,6 @@ public class LoginService {
 
 	public List<Login> validateUser(String email, String password) {
 		String passwordInMD5 = PasswordUtil.getPasswordInMD5(password);
-
 		Query query = entityManager.createNativeQuery("select * from login where email = :email AND password = :pass",
 				Login.class);
 		query.setParameter("email", email);
