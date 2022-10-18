@@ -63,13 +63,13 @@ public class LoginController {
 			}
 			logger.info("user found");
 			if (usertype.equals("admin")) {
-				return new ModelAndView("dashboardAdmin", "Message", "Admin Login successful");
+				return new ModelAndView("admDashboard", "Message", "Admin Login successful");
 			} else if (usertype.equals("operation")) {
-				return new ModelAndView("dashboardOperation", "Message", "Operation Login successful");
+				return new ModelAndView("oprDashboard", "Message", "Operation Login successful");
 			} else if (usertype.equals("user")) {
-				return new ModelAndView("dashboardUser", "Message", "User Login successful");
+				return new ModelAndView("usrDashboard", "Message", "User Login successful");
 			}else if (usertype.equals("vendor")) {
-				return new ModelAndView("dashboardVendor", "Message", "Vendor Login successful");
+				return new ModelAndView("vndDashboard", "Message", "Vendor Login successful");
 			}
 		}
 		return null;

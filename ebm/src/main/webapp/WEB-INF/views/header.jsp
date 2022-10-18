@@ -32,21 +32,19 @@
 	href="/resources/plugins/summernote/summernote-bs4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-<%
-		response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
-		response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
-		response.setHeader("Expires", "0"); // Proxies.
-%>
-<%@include file="connection.jsp"%>
-<%
-	Long useridheder = (Long)session.getAttribute("userId");
-	String useremailheader =(String) session.getAttribute("userEmail");
-	String username=(String)session.getAttribute("userName");
-	String usertype=(String)session.getAttribute("userType");
-%>
-
+	<%
+	response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+	response.setHeader("Pragma", "no-cache"); // HTTP 1.0.
+	response.setHeader("Expires", "0"); // Proxies.
+	%>
+	<%@include file="connection.jsp"%>
+	<%
+	Long useridheder = (Long) session.getAttribute("userId");
+	String useremailheader = (String) session.getAttribute("userEmail");
+	String username = (String) session.getAttribute("userName");
+	String usertype = (String) session.getAttribute("userType");
+	%>
 	<div class="wrapper">
-
 		<!-- Navbar -->
 		<nav
 			class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -62,16 +60,8 @@
 
 			<!-- Right navbar links -->
 			<ul class="navbar-nav ml-auto">
-				<!-- Navbar Search -->
-
-				<li class="nav-item"><a class="nav-link"
-					data-widget="fullscreen" href="#" role="button"> <i
-						class="fas fa-expand-arrows-alt"></i>
-				</a></li>
-				<li class="nav-item"><a class="nav-link"
-					data-widget="control-sidebar" data-controlsidebar-slide="true"
-					href="#" role="button"> <i class="fas fa-th-large"></i>
-				</a></li>
+				<li class="nav-item"><a href="/" role="button"><i
+						class="fa fa-power-off" aria-hidden="true"></i>Logout</a></li>
 			</ul>
 		</nav>
 		<!-- /.navbar -->
@@ -115,26 +105,23 @@
 								</p>
 						</a></li>
 
-						<li class="nav-item"><a href="#" class="nav-link"> <i
-								class="nav-icon fas fa-table"></i>
-								<p>
-									Users <i class="fas fa-angle-left right"></i>
-								</p>
-						</a>
+						<li class="nav-item">
+							<a href="#" class="nav-link"> 
+								<i class="nav-icon fas fa-table"></i>
+								<p>Users <i class="fas fa-angle-left right"></i></p>
+							</a>
 							<ul class="nav nav-treeview">
-								<li class="nav-item"><a href="pages/tables/simple.html"
-									class="nav-link"> <i class="far fa-circle nav-icon"></i>
-										<p>Simple Tables</p>
-								</a></li>
-								<li class="nav-item"><a href="pages/tables/data.html"
-									class="nav-link"> <i class="far fa-circle nav-icon"></i>
-										<p>DataTables</p>
-								</a></li>
-								<li class="nav-item"><a href="pages/tables/jsgrid.html"
-									class="nav-link"> <i class="far fa-circle nav-icon"></i>
-										<p>jsGrid</p>
-								</a></li>
-							</ul></li>
+								<li class="nav-item">
+									<a href="admOprUser.jsp" class="nav-link"><i class="far fa-circle nav-icon"></i><p>Operation</p></a>
+								</li>
+								<li class="nav-item">
+									<a href="admVndUser.jsp" class="nav-link"><i class="far fa-circle nav-icon"></i><p>Partners</p></a>
+								</li>
+								<li class="nav-item">
+									<a href="admEndUser.jsp" class="nav-link"><i class="far fa-circle nav-icon"></i><p>End Users</p></a>
+								</li>
+							</ul>
+						</li>
 					</ul>
 				</nav>
 				<!-- /.sidebar-menu -->
