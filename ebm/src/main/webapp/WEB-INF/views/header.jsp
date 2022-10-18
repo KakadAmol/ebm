@@ -112,13 +112,13 @@
 							</a>
 							<ul class="nav nav-treeview">
 								<li class="nav-item">
-									<a href="admOprUser.jsp" class="nav-link"><i class="far fa-circle nav-icon"></i><p>Operation</p></a>
+									<a href="admOprUser" class="nav-link"><i class="far fa-circle nav-icon"></i><p>Operation</p></a>
 								</li>
 								<li class="nav-item">
-									<a href="admVndUser.jsp" class="nav-link"><i class="far fa-circle nav-icon"></i><p>Partners</p></a>
+									<a href="admVndUser" class="nav-link"><i class="far fa-circle nav-icon"></i><p>Partners</p></a>
 								</li>
 								<li class="nav-item">
-									<a href="admEndUser.jsp" class="nav-link"><i class="far fa-circle nav-icon"></i><p>End Users</p></a>
+									<a href="admEndUser" class="nav-link"><i class="far fa-circle nav-icon"></i><p>End Users</p></a>
 								</li>
 							</ul>
 						</li>
