@@ -67,7 +67,7 @@
 					<a href="forgot-password.html">I forgot my password</a>
 				</p>
 				<p class="mb-0">
-					<a href="register.jsp" class="text-center">Register a new
+					<a href="register" class="text-center">Register a new
 						membership</a>
 				</p>
 			</div>

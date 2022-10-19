@@ -10,6 +10,12 @@ public class NavigationController {
 
 	private static final Logger logger = LogManager.getLogger(NavigationController.class);
 
+	@RequestMapping(value = "/register")
+	public String navToRegisterPage() {
+		return "register";
+	}
+	
+	
 	@RequestMapping(value = "/admOprUser")
 	public String navToAdmOprUserPage() {
 		return "admOprUser";
