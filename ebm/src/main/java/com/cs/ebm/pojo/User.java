@@ -4,9 +4,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
-public class Login {
+@Table(name = "login")
+public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,11 +19,11 @@ public class Login {
 	private String usertype;
 	private String status;
 
-	public Login() {
+	public User() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Login(Long userid, String username, String email, String password, String usertype, String status) {
+	public User(Long userid, String username, String email, String password, String usertype, String status) {
 		super();
 		this.userid = userid;
 		this.username = username;

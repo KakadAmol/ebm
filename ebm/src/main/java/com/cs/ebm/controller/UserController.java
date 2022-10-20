@@ -10,20 +10,22 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.cs.ebm.pojo.Login;
-import com.cs.ebm.service.LoginService;
+import com.cs.ebm.pojo.User;
+import com.cs.ebm.service.UserService;
+import com.cs.ebm.utils.PasswordUtil;
 
 @Controller
-public class LoginController {
+public class UserController {
 
-	private static final Logger logger = LogManager.getLogger(LoginController.class);
+	private static final Logger logger = LogManager.getLogger(UserController.class);
 
 	@Autowired
-	LoginService loginService;
+	UserService userService;
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ModelAndView checkLogin(HttpServletRequest request, HttpServletResponse response) {
@@ -41,7 +43,7 @@ public class LoginController {
 			logger.info("new session:" + session.getId());
 		}
 
-		List<Login> ll = loginService.validateUser(loginuser, password);
+		List<User> ll = userService.validateUser(loginuser, password);
 		Long userId = 0l;
 		String email = null;
 		String username = null;
@@ -50,11 +52,11 @@ public class LoginController {
 			logger.info("user not found");
 			return new ModelAndView("login", "Message", "Incorrect userid password");
 		} else {
-			for (Login login : ll) {
-				userId = login.getuserid();
-				email = login.getEmail();
-				username = login.getUsername();
-				usertype = login.getUsertype();
+			for (User user : ll) {
+				userId = user.getuserid();
+				email = user.getEmail();
+				username = user.getUsername();
+				usertype = user.getUsertype();
 				// set value in session for access in UI
 				session.setAttribute("userId", userId);
 				session.setAttribute("userName", username);
@@ -68,11 +70,20 @@ public class LoginController {
 				return new ModelAndView("oprDashboard", "Message", "Operation Login successful");
 			} else if (usertype.equals("user")) {
 				return new ModelAndView("usrDashboard", "Message", "User Login successful");
-			}else if (usertype.equals("vendor")) {
+			} else if (usertype.equals("vendor")) {
 				return new ModelAndView("vndDashboard", "Message", "Vendor Login successful");
 			}
 		}
 		return null;
+	}
+
+	@RequestMapping(value = "/register", method = RequestMethod.POST)
+	public ModelAndView registerUser(@ModelAttribute User user) {
+		user.setStatus("active");
+		user.setUsertype("user");
+		user.setPassword(PasswordUtil.getPasswordInMD5(user.getPassword()));
+		userService.registerUser(user);
+		return new ModelAndView("login", "Message", "Registration Successful");
 	}
 
 }

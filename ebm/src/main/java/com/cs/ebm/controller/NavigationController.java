@@ -15,6 +15,11 @@ public class NavigationController {
 		return "register";
 	}
 	
+	@RequestMapping(value = "/loginpage")
+	public String navToLoginPage() {
+		return "login";
+	}
+	
 	
 	@RequestMapping(value = "/admOprUser")
 	public String navToAdmOprUserPage() {
