@@ -5,6 +5,8 @@ import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import lombok.val;
+
 @Controller
 public class NavigationController {
 
@@ -34,5 +36,11 @@ public class NavigationController {
 	@RequestMapping(value = "/admVndUser")
 	public String navToVdmVndUser() {
 		return "admVndUser";
+	}
+	
+	
+	@RequestMapping(value="/usrAddEnquiry")
+	public String navToUseAddEnquiry() {
+		return "usrAddEnquiry";
 	}
 }
