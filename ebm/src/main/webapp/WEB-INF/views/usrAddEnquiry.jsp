@@ -31,8 +31,6 @@
 		<div class="container-fluid">
 			<!-- Small boxes (Stat box) -->
 
-
-
 			<!-- general form elements disabled -->
 			<div class="card card-warning">
 				<div class="card-header">
@@ -40,178 +38,58 @@
 				</div>
 				<!-- /.card-header -->
 				<div class="card-body">
-					<form action="addEnquiry" method="post">
+					<h3>${Message}</h3>
 						<div class="row">
-							<div class="col-sm-6">
-								<!-- text input --> 
+								<form action="addEnquiry" method="post">
 								<div class="form-group">
-									<label>Name</label> <input type="text" name="enquiryBy"
-										class="form-control" placeholder="Enter ...">
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label>Phone No</label> <input type="text"
-										name="enquiryContact" class="form-control"
-										placeholder="Enter ...">
-								</div>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<!-- textarea -->
-								<div class="form-group">
+									<label>Name</label> 
+									<input type="text" name="enquiryBy"	class="form-control" placeholder="Enter ...">
+									<label>Phone No</label> 
+									<input type="text" name="enquiryContact" class="form-control" placeholder="Enter ...">
+									<label>Prefer Time To Talk</label> 
+									<input type="text" name="enquiryPreferTimeToTalk" class="form-control" placeholder="Enter ...">
+									<label>Number Of Guest</label> 
+									<input type="text" name="enquiryNumberOfGuest" class="form-control"	placeholder="Enter ...">
+									<label>Event Type</label> 
+									<select class="form-control" name="eventType">
+										<option>Birthday</option>
+										<option>Wedding</option>
+									</select>
+									<label>Country</label> 
+										<select class="form-control" name="eventCountry">
+											<option>India</option>
+										</select>
+									<label>State</label> <select class="form-control" name="eventState">
+										<option>Goa</option>
+										<option>Rajasthan</option>
+										<option>Maharashtra</option>
+									</select>
+									<label>City</label> <select class="form-control" name="eventCity">
+										<option>Goa</option>
+										<option>Udaipur</option>
+										<option>Lonawala</option>
+									</select>
+									<label>Preferred Venue</label> <select class="form-control" name="eventPreferredVenue">
+										<option>Hotel</option>
+										<option>Resort</option>
+										<option>Park</option>
+									</select>
+									<label>Event Date</label> 
+									<input type="date"	name="eventDate" class="form-control"	placeholder="Enter ...">
+									
 									<label>Detail</label>
 									<textarea class="form-control" name="eventNote" rows="3"
 										placeholder="Enter ..."></textarea>
-								</div>
-							</div>
-						</div>
-
-						<!-- input states -->
-						<div class="form-group">
-							<label class="col-form-label" for="inputSuccess"><i
-								class="fas fa-check"></i> Input with success</label> <input type="text"
-								class="form-control is-valid" id="inputSuccess"
-								placeholder="Enter ...">
-						</div>
-						<div class="form-group">
-							<label class="col-form-label" for="inputWarning"><i
-								class="far fa-bell"></i> Input with warning</label> <input type="text"
-								class="form-control is-warning" id="inputWarning"
-								placeholder="Enter ...">
-						</div>
-						<div class="form-group">
-							<label class="col-form-label" for="inputError"><i
-								class="far fa-times-circle"></i> Input with error</label> <input
-								type="text" class="form-control is-invalid" id="inputError"
-								placeholder="Enter ...">
-						</div>
-
-						<div class="row">
-							<div class="col-sm-6">
-								<!-- checkbox -->
+									
 								<div class="form-group">
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox"> <label
-											class="form-check-label">Checkbox</label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" checked>
-										<label class="form-check-label">Checkbox checked</label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="checkbox" disabled>
-										<label class="form-check-label">Checkbox disabled</label>
-									</div>
+									<input type="submit" value="Submit Enquiry" class="btn-btn sucess">
 								</div>
 							</div>
-							<div class="col-sm-6">
-								<!-- radio -->
-								<div class="form-group">
-									<div class="form-check">
-										<input class="form-check-input" type="radio" name="radio1">
-										<label class="form-check-label">Radio</label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="radio" name="radio1"
-											checked> <label class="form-check-label">Radio
-											checked</label>
-									</div>
-									<div class="form-check">
-										<input class="form-check-input" type="radio" disabled>
-										<label class="form-check-label">Radio disabled</label>
-									</div>
-								</div>
-							</div>
+							</form>
 						</div>
-
-						<div class="row">
-							<div class="col-sm-6">
-								<!-- select -->
-								<div class="form-group">
-									<label>Select</label> <select class="form-control">
-										<option>option 1</option>
-										<option>option 2</option>
-										<option>option 3</option>
-										<option>option 4</option>
-										<option>option 5</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label>Select Disabled</label> <select class="form-control"
-										disabled>
-										<option>option 1</option>
-										<option>option 2</option>
-										<option>option 3</option>
-										<option>option 4</option>
-										<option>option 5</option>
-									</select>
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-sm-6">
-								<!-- Select multiple-->
-								<div class="form-group">
-									<label>Select Multiple</label> <select multiple
-										class="form-control">
-										<option>option 1</option>
-										<option>option 2</option>
-										<option>option 3</option>
-										<option>option 4</option>
-										<option>option 5</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-sm-6">
-								<div class="form-group">
-									<label>Select Multiple Disabled</label> <select multiple
-										class="form-control" disabled>
-										<option>option 1</option>
-										<option>option 2</option>
-										<option>option 3</option>
-										<option>option 4</option>
-										<option>option 5</option>
-									</select>
-								</div>
-							</div>
-						</div>
-						<input type="submit" value="Submit Enquiry" class="btn-btn sucess">
-					</form>
 				</div>
-				<!-- /.card-body -->
+				</div>
 			</div>
-			<!-- /.card -->
-			<!-- general form elements disabled -->
-
-
-
-
-
-
-
-
-
-			<!-- Main row -->
-			<div class="row">
-				<!-- Left col -->
-				<section class="col-lg-7 connectedSortable">
-					<!-- Custom tabs (Charts with tabs)-->
-					<!-- /.card-body -->
-			</div>
-			<!-- /.card-footer-->
-		</div>
-		<!--/.direct-chat -->
-
 	</section>
-</div>
-</div>
-<!-- /.container-fluid -->
-</section>
-</div>
-
+	</div>
 <%@include file="footer.jsp"%>

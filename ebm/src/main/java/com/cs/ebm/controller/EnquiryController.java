@@ -31,6 +31,7 @@ public class EnquiryController {
 
 	@RequestMapping(value = "/addEnquiry", method = RequestMethod.POST)
 	public ModelAndView addEnquiry(@ModelAttribute Enquiry enquiry) {
+		logger.info(getClass() + "| addEnquiry | method called !");
 		enquiryService.addEnquiry(enquiry);
 		return new ModelAndView("usrAddEnquiry", "Message", "Enquiry Successful ! Our Customer Care Executive Connect you on your preffered time Thank You !");
 	}
