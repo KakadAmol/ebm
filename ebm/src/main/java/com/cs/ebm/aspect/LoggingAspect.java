@@ -15,28 +15,27 @@ import lombok.extern.log4j.Log4j2;
 @Component
 public class LoggingAspect {
 
+    @Pointcut("execution(* com.cs.ebm..*.*(..))")
+    public void myPointcut() {
 
-	@Pointcut(value ="execution(* com.cs.ebm.*.*.*(..) )")
-	public void myPointcut() {
-		
-	}
-	
-	@Around("myPointcut()")
-	public Object applicationLogger(ProceedingJoinPoint pjp) throws Throwable {
-		
-		ObjectMapper mapper = new ObjectMapper();
-		
-		// before method invocation
-		String methodName = pjp.getSignature().getName();
-		String className = pjp.getTarget().getClass().toString();
-		Object[] arg = pjp.getArgs();
-		log.info("Method Invoke" + className + " : " + methodName+"() " + arg + mapper.writeValueAsString(arg));
+    }
 
-		// for execute method 
-		Object object = pjp.proceed();
-		
-		// after proceed method
-		log.info(className + " : " + methodName+"()  Response : " + mapper.writeValueAsString(object));
-		return object;
-	}
+    @Around("myPointcut()")
+    public Object applicationLogger(ProceedingJoinPoint pjp) throws Throwable {
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        // before method invocation
+        String methodName = pjp.getSignature().getName();
+        String className = pjp.getTarget().getClass().getName(); // Use getName() to get the fully-qualified class name
+        Object[] arg = pjp.getArgs();
+        log.info("Method Invoke " + className + " : " + methodName + "() " + mapper.writeValueAsString(arg));
+
+        // for executing the method
+        Object object = pjp.proceed();
+
+        // after the method execution
+        log.info(className + " : " + methodName + "() Response : " + mapper.writeValueAsString(object));
+        return object;
+    }
 }

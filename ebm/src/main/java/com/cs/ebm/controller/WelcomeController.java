@@ -10,6 +10,7 @@ public class WelcomeController {
 	public String landingPage() {
 		System.out.println("Welcome to LoginPage : Called");
 		return "login";
+
 	}
 
 }

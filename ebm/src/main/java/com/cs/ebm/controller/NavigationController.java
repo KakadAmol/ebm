@@ -11,7 +11,9 @@ public class NavigationController {
 
 	@RequestMapping(value = "/register")
 	public String navToRegisterPage() {
+		
 		log.info(this.getClass().getSimpleName());
+		
 		return "register";
 	}
 	

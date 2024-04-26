@@ -23,6 +23,6 @@ public class PasswordUtil {
 	
 	public static void main(String[] args) {
 		
-		System.out.println(PasswordUtil.getPasswordInMD5("welcome@1"));
+		System.out.println(PasswordUtil.getPasswordInMD5("Welcome@1"));
 	}
 }

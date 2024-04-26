@@ -10,7 +10,7 @@ public class ExcecptionHandler {
 
 	@ExceptionHandler(value = ServiceNotFoundException.class)
 	public ResponseEntity<Object> exception(ServiceNotFoundException exception) {
-		// return new ResponseEntity<Object>(exception.getErrorMessage(),
+		//return new ResponseEntity<Object>(exception.getErrorMessage(),
 		// HttpStatus.NOT_FOUND);
 		return new ResponseEntity<Object>(exception.getErrorMessage(), HttpStatus.NOT_FOUND);
 	}
